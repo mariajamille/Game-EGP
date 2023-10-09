@@ -17,7 +17,7 @@ const modal03 = document.querySelector(".dia03")
 const containerModal = document.querySelector("#modal-js")
 
 
-const button = document.querySelector("button")
+const button = document.querySelector(".btn-game")
 const buttonClose01 = document.querySelector("#close01")
 const buttonClose02 = document.querySelector("#close02")
 const buttonClose03 = document.querySelector("#close03")
@@ -25,7 +25,7 @@ const wordText = document.querySelector(".word"),
     hintText = document.querySelector(".hint span"),
     timeText = document.querySelector(".time b"),
     inputField = document.querySelector("input"),
-    refreshBtn = document.querySelector(".refresh-word"),
+    refreshBtn = document.querySelector("#refresh-word"),
     checkBtn = document.querySelector("#check-word"),
     confirmar = document.querySelector("#mostrarDiv");
 
@@ -50,9 +50,10 @@ const checkWord = () => {
     let userWord = inputField.value.toLowerCase();
     if (!userWord) return modal01.show(), divTransparente.style.display = 'block';
     if (userWord !== correctWord) return modal03.show(), divTransparente.style.display = 'block';
-    modal02.show() , d2.style.display = 'block';
+    modal02.show(), d2.style.display = 'block';
     initGame();
 }
+
 refreshBtn.addEventListener("click", initGame);
 checkBtn.addEventListener("click", checkWord);
 

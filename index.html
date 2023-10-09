@@ -21,11 +21,6 @@
 
   <!-- link do fonte awesome  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-
-  <!-- LINK SWEETALERT -->
-  <link rel="stylesheet" href="@sweetalert2/themes/dark/dark.css">
-  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
 </head>
 
 <body>
@@ -74,19 +69,19 @@
               <input type="text" spellcheck="false" placeholder="Escreva a palavra">
               <div class="buttons">
                 <button class="refresh-word">Embaralhar</button>
-                <button id="check-word" id="mostrarDiv">Confirmar</button>
+                <button id="check-word">Confirmar</button>
 
                 <div id="divTransparente" class="escondida" ></div>
-
-                <!-- data-bs-dismiss="modal" função para fechar todos os modais -->
+                <div id="d2" class="escondida" data-bs-dismiss="modal"></div>
 
                 <!-- MODAIS DAS RESPOSTAS -->
                 <!-- MODAL QUANDO A CAIXA DE RESPOSTA ESTIVER VAZIA -->
-                <div id="modal-js">
+                <div id="modal-js" >
                   <dialog class="dia01">
-                    <!-- <button type="button" class="btn-close d-flex justify-content-end"></button> -->
                     <i id="close01" class="bi bi-x"></i>
-                    <img src="imgs/opps.png" alt="" width="500" height="300">
+                    <div class="text-center">
+                    <img src="imgs/opps.png" class="img-fluid" alt="Imagem indicando que a caixa de resposta está vazia.">
+                  </div>
                   </dialog>
                 </div>
 
@@ -94,17 +89,19 @@
                 <div id="modal-js">
                   <dialog class="dia02">
                     <i id="close02" class="bi bi-x" data-bs-dismiss="modal"></i>
-                    <!-- <button type="button" id="close02" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
-                    <img src="imgs/parabens.png" alt="" width="500" height="300">
-                    <!-- <div id="close1">Fechar</i></div> -->
+                    <div class="text-center">
+                    <img src="imgs/parabens.png"  class="img-fluid" alt="Imagem indicando que você acertou a resposta.">
+                  </div>
                   </dialog>
                 </div>
 
-                <!-- MODAL QUANDO A CAIXA DE RESPOSTA ESTIVER ERRADA-->
+                <!-- MODAL QUANDO A RESPOSTA ESTIVER ERRADA-->
                 <div id="modal-js">
                   <dialog class="dia03">
                     <i id="close03" class="bi bi-x"></i>
-                    <img src="imgs/que-pena.png" alt="" width="500" height="300">
+                    <div class="text-center">
+                    <img src="imgs/que-pena.png" class="img-fluid" alt="Imagem indicando que você errou a resposta.">
+                  </div>
                   </dialog>
                 </div>
 
@@ -116,50 +113,12 @@
       </div> -->
         </div>
       </div>
-
     </div>
 
     <button class="btn d-flex align-items-center justify-content-evenly" data-bs-target="#exampleModalToggle"
       id="btn-game" data-bs-toggle="modal"><i class="fa-solid fa-puzzle-piece" id="puzzle"></i>Teste Seus
       Conhecimentos</i></button>
       
-
-    <!-- Info Box -->
-    <!-- <div class="info_box">
-          <div class="info-title"><span>Some Rules of this Quiz</span></div>
-          <div class="info-list">
-              <div class="info">1. You will have only <span>15 seconds</span> per each question.</div>
-              <div class="info">2. Once you select your answer, it can't be undone.</div>
-              <div class="info">3. You can't select any option once time goes off.</div>
-              <div class="info">4. You can't exit from the Quiz while you're playing.</div>
-              <div class="info">5. You'll get points on the basis of your correct answers.</div>
-          </div>
-          <div class="buttons">
-              <button class="quit">Exit Quiz</button>
-              <button class="restart">Continue</button>
-          </div>
-      </div> -->
-
-    <!-- BOTÃO PARA INICAR O JOGO -->
-    <!-- <button type="button" class="btn btn-primary" id="inicio" onclick="start()">Teste seus conhecimentos</button> -->
-    <!-- <div id="inicio" onclick="start()"><button>Iniciar Jogo</button></div> -->
-
-    <!-- <div class="contain">
-    <div id="close"><i class="fa-solid fa-x"></i></div> -->
-    <!-- <div id="question"><i class="fa-regular fa-circle-question"></i></div> -->
-    <!-- <h2>Palavra Embaralhada</h2>
-    <div class="content">
-      <p class="word"></p>
-      <div class="details">
-        <p class="hint">Dica: <span></span></p>
-      </div>
-      <input type="text" spellcheck="false" placeholder="Escreva a palavra">
-      <div class="buttons">
-        <button class="refresh-word">Embaralhar</button>
-        <button class="check-word" id="imagem">Confirmar</button>
-      </div>
-    </div>
-  </div> -->
   </div>
 </body>
 

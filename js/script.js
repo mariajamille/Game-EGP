@@ -1,26 +1,14 @@
-// var btn = document.querySelector("#inicio")
-// var container = document.querySelector(".contain")
-// var close = document.querySelector("#close")
 
-// btn.addEventListener('click', function () {
-
-//     if (container.style.display === 'block') {
-//         container.style.display = 'none'
-//     } else {
-//         btn.style.display = 'none'
-//         container.style.display = 'block'
-//     }
-// })
-const modal01 = document.querySelector(".dia01")
-const modal02 = document.querySelector(".dia02")
-const modal03 = document.querySelector(".dia03")
+const modal01 = document.querySelector(".modal01")
+const modal02 = document.querySelector(".modal02")
+const modal03 = document.querySelector(".modal03")
 const containerModal = document.querySelector("#modal-js")
-
 
 const button = document.querySelector(".btn-game")
 const buttonClose01 = document.querySelector("#close01")
 const buttonClose02 = document.querySelector("#close02")
 const buttonClose03 = document.querySelector("#close03")
+
 const wordText = document.querySelector(".word"),
     hintText = document.querySelector(".hint span"),
     timeText = document.querySelector(".time b"),
@@ -29,8 +17,9 @@ const wordText = document.querySelector(".word"),
     checkBtn = document.querySelector("#check-word"),
     confirmar = document.querySelector("#mostrarDiv");
 
+
+//FUNÇÃO PARA VERIFICAR AS PALAVRAS
 const initGame = () => {
-    // initTimer(30);
     let randomObj = words[Math.floor(Math.random() * words.length)];
     let wordArray = randomObj.word.split("");
     for (let i = wordArray.length - 1; i > 0; i--) {
@@ -58,69 +47,71 @@ refreshBtn.addEventListener("click", initGame);
 checkBtn.addEventListener("click", checkWord);
 
 
-// Div transparente:
-// containerModal.addEventListener('click', (e) => {
-//     if(e.target.id == 'modal-js'){
-//         containerModal.classList.remove(modal01)
-//     }
-// })
+//FUNÇÃO COM OS MODAIS DAS IMAGENS 
+// BUTÕES COM FUNÇÃO PARA FECHAR MODAIS COM ANIMAÇAO:
+// BUTÃO DE FECHAR QUANDO A RESPOSTA FOR VAZIA:
+buttonClose01.addEventListener("click", function () {
+    modal01.classList.add("fade-out");
 
-// buttonClose02.onclick = function () {
-//     modal02.close()
-// }
-
-// buttonClose03.onclick = function () {
-//     modal03.close()
-// }
-
-// buttonClose01.onclick = function () {
-//     modal01.close()  
-// }
-
-// divTransparente.addEventListener('click', function () {
-
-//     if (container.style.display === 'block') {
-//         container.style.display = 'none'
-//     } else {
-//         btn.style.display = 'none'
-//         container.style.display = 'block'
-//     }
-// })
-
-
-buttonClose01.onclick = () => {
-    divTransparente.style.display = 'none'
-    modal01.close() 
-}
-
-buttonClose02.onclick = () => {
-    divTransparente.style.display = 'none'
-    modal02.close() 
-}
-
-buttonClose03.onclick = () => {
-    divTransparente.style.display = 'none'
-    modal03.close() 
-}
-
-const mostrarDivButton = document.getElementById('check-word');
-const divTransparente = document.getElementById('divTransparente');
-
-// mostrarDivButton.addEventListener('click', () => {
-//     divTransparente.style.display = 'block';
-// });
-
-divTransparente.addEventListener('click', () => {
-    divTransparente.style.display = 'none';
-    modal01.close()
-    modal03.close()
-    // Adicione aqui o código da ação que deseja executar quando a div transparente for clicada.
+    setTimeout(function () {
+        modal01.classList.remove("fade-out");
+        divTransparente.style.display = 'none'
+        modal01.close()
+    }, 400);
 });
+
+// BUTÃO DE FECHAR QUANDO A RESPOSTA FOR INVALIDA:
+buttonClose03.addEventListener("click", function () {
+    modal03.classList.add("fade-out");
+
+    setTimeout(function () {
+        modal03.classList.remove("fade-out");
+        divTransparente.style.display = 'none'
+        modal03.close()
+    }, 400);
+
+});
+
+
+// BUTÃO PARA FECHAR O MODAL DE ACERTO:
+buttonClose02.onclick = () => {
+    d2.style.display = 'none'
+    modal02.close()
+}
+
+//FUNÇÃO PARA FECHAR OS MODAIS COM ANIMAÇÃO QUANDO CLICAR FORA DO CONTEÚDO:
+divTransparente.addEventListener('click', () => {
+    modal01.classList.add("fade-out");
+    modal03.classList.add("fade-out");
+    setTimeout(function () {
+        modal01.classList.remove("fade-out");
+        modal03.classList.remove("fade-out");
+        divTransparente.style.display = 'none'
+        modal01.close()
+        modal03.close()
+    }, 400);
+});
+
 d2.addEventListener('click', () => {
     d2.style.display = 'none';
     modal02.close()
-    // Adicione aqui o código da ação que deseja executar quando a div transparente for clicada.
 });
 
+// Butões acionados com teclas:
+// document.addEventListener("keypress", function(o){
+//     if(o.key === 'Enter'){
+//         checkBtn.click()
+//     }
+// });
 
+
+
+// confirmar.addEventListener("keypress", function(e) {
+
+//     if(e.key === "Enter"){
+
+//        confirmar.click();
+
+//     }
+// });
 

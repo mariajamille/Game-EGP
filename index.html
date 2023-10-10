@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!-- Coding By CodingNepal - youtube.com/codingnepal -->
 <html lang="pt-br" dir="ltr">
@@ -8,16 +7,19 @@
   <title>Palavra Embaralhada</title>
   <link rel="stylesheet" href="style.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- JAVASCRIPT -->
   <script src="js/words.js" defer></script>
   <script src="js/script.js" defer></script>
-  
 
   <!-- CDN DO BOOTSTRAP -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 
   <!-- link do fonte awesome  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
@@ -71,37 +73,39 @@
                 <button class="btn-game" id="refresh-word">Embaralhar</button>
                 <button class="btn-game" id="check-word">Confirmar</button>
 
-                <div id="divTransparente" class="escondida" ></div>
+                <div id="divTransparente" class="escondida"></div>
                 <div id="d2" class="escondida" data-bs-dismiss="modal"></div>
 
                 <!-- MODAIS DAS RESPOSTAS -->
                 <!-- MODAL QUANDO A CAIXA DE RESPOSTA ESTIVER VAZIA -->
-                <div id="modal-js" >
-                  <dialog class="dia01">
+                <div id="modal-js">
+                  <dialog class="modal01">
                     <i id="close01" class="bi bi-x"></i>
                     <div class="text-center">
-                    <img src="imgs/opps.png" class="img-fluid" alt="Imagem indicando que a caixa de resposta está vazia.">
-                  </div>
+                      <img src="imgs/opps.png" class="img-fluid"
+                        alt="Imagem indicando que a caixa de resposta está vazia.">
+                    </div>
                   </dialog>
                 </div>
 
                 <!-- MODAL QUANDO A RESPOSTA ESTIVER CORRETA -->
                 <div id="modal-js">
-                  <dialog class="dia02">
+                  <dialog class="modal02">
                     <i id="close02" class="bi bi-x" data-bs-dismiss="modal"></i>
                     <div class="text-center">
-                    <img src="imgs/parabens.png"  class="img-fluid" alt="Imagem indicando que você acertou a resposta.">
-                  </div>
+                      <img src="imgs/parabens.png" class="img-fluid"
+                        alt="Imagem indicando que você acertou a resposta.">
+                    </div>
                   </dialog>
                 </div>
 
                 <!-- MODAL QUANDO A RESPOSTA ESTIVER ERRADA-->
                 <div id="modal-js">
-                  <dialog class="dia03">
+                  <dialog class="modal03">
                     <i id="close03" class="bi bi-x"></i>
                     <div class="text-center">
-                    <img src="imgs/que-pena.png" class="img-fluid" alt="Imagem indicando que você errou a resposta.">
-                  </div>
+                      <img src="imgs/que-pena.png" class="img-fluid" alt="Imagem indicando que você errou a resposta.">
+                    </div>
                   </dialog>
                 </div>
 
@@ -118,7 +122,6 @@
     <button class="btn d-flex align-items-center justify-content-evenly" data-bs-target="#exampleModalToggle"
       id="btn-game" data-bs-toggle="modal"><i class="fa-solid fa-puzzle-piece" id="puzzle"></i>Teste Seus
       Conhecimentos</i></button>
-      
   </div>
 </body>
 

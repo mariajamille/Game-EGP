@@ -1,4 +1,17 @@
 
+
+// ############################# GAME DE EMBARALHAR PALAVRAS ########################################
+let words = [
+    {
+        word: "imediatismo",
+        hint: "Dica: Tudo aquilo que se faz na busca do agora. Maneira direta de proceder, sem mediações nem rodeios."
+    }
+    // {
+    //     word: "jardim",
+    //     hint: "Espaço reservado para o plantar flores."
+    // }
+]
+
 const modal01 = document.querySelector(".modal01")
 const modal02 = document.querySelector(".modal02")
 const modal03 = document.querySelector(".modal03")
@@ -12,7 +25,7 @@ const buttonClose03 = document.querySelector("#close03")
 const wordText = document.querySelector(".word"),
     hintText = document.querySelector(".hint span"),
     timeText = document.querySelector(".time b"),
-    inputField = document.querySelector("input"),
+    inputField = document.querySelector("#palavras-respostas"),
     refreshBtn = document.querySelector("#refresh-word"),
     checkBtn = document.querySelector("#check-word"),
     confirmar = document.querySelector("#mostrarDiv");
@@ -97,21 +110,35 @@ d2.addEventListener('click', () => {
     modal02.close()
 });
 
+
 // Butões acionados com teclas:
-// document.addEventListener("keypress", function(o){
-//     if(o.key === 'Enter'){
-//         checkBtn.click()
-//     }
-// });
+
+  // Adicione um evento mostrando a imagem quando o modal é mostrado
+  $('#exampleModalToggle2').on('shown.bs.modal', function () {
+    document.addEventListener('keydown', handleKeyPress);
+  });
+
+  // Adicione um evento escondendo a imagem quando o modal é fechado
+  $('#exampleModalToggle2').on('hidden.bs.modal', function () {
+    document.removeEventListener('keydown', handleKeyPress);
+  });
+
+  function handleKeyPress(event) {
+    var modal = document.getElementById('exampleModalToggle2');
+    var modalImage = document.getElementById('modalImage');
+
+    // Verifique se o modal está aberto
+    if ($(modal).hasClass('show')) {
+      // Verifique se a tecla pressionada é "Enter"
+      if (event.key === 'Enter') {
+        // Mostrar a imagem
+        checkBtn.click() // Ou faça alguma ação para mostrar a imagem
+      }
+    }
+  }
+
+// ############################# GAME DE EMBARALHAR PALAVRAS END ########################################
 
 
 
-// confirmar.addEventListener("keypress", function(e) {
-
-//     if(e.key === "Enter"){
-
-//        confirmar.click();
-
-//     }
-// });
 

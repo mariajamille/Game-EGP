@@ -9,7 +9,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <!-- JAVASCRIPT -->
-  <script src="js/words.js" defer></script>
+  <!-- <script src="js/words.js" defer></script> -->
   <script src="js/script.js" defer></script>
 
   <!-- CDN DO BOOTSTRAP -->
@@ -26,23 +26,32 @@
 </head>
 
 <body>
-  <div id="teste">
-    <!-- MODAL 1 - INSTRÇÕES DO JOGO -->
+
+  <!-- começo do Quiz botao -->
+  <div class="start_btn wow animate__bounceInLeft" data-wow-delay="0.4s"><button data-bs-target="#exampleModalToggle"
+      id="btn-game" data-bs-toggle="modal"><i class="icone fa-solid fa-puzzle-piece"></i>TESTE SEUS
+      CONHECIMENTOS</button></div>
+
+  <!-- ######################################## GAME DE EMBARALHAR PALAVRAS ##################################### -->
+  <div id="game" class="wow fadeIn" data-wow-delay="0.3s">
+    <!-- MODAL 1 - INSTRUÇÕES DO JOGO -->
     <div class="modal fade" id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel"
       tabindex="-1">
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-3" id="exampleModalToggleLabel"><i class="fa-solid fa-pen-clip"></i> Instruções do
+            <h1 class="modal-title fs-3" id="exampleModalToggleLabel"><i class="fa-solid fa-pen-clip"></i>
+              Instruções do
               Teste</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body fw-medium">
-            <ol>
-              <li>Você deverá descobrir a palavra embaralhada.</li>
-              <li>Ao concluir clique em confirmar.</li>
-              <li>Este teste não influenciará na avaliação final.</li>
-            </ol>
+          <div class="modal-body fw-normal" id="instrucoes">
+
+            1. Você deverá descobrir qual é a palavraque está embaralhada;<br><br>
+            2. Haverá uma dica para lhe auxiliar;<br><br>
+            3. Ao concluir clique em confirmar;<br><br>
+            4. Este teste não influenciará na avaliação final.<br><br>
+
           </div>
           <div class="modal-footer">
             <button class="btn" id="btn-game" data-bs-target="#exampleModalToggle2"
@@ -58,17 +67,20 @@
       <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-3" id="exampleModalToggleLabel2"><i class="fa-solid fa-gamepad"></i> Palavra
+            <h1 class="modal-title fs-3" id="exampleModalToggleLabel2"><i class="fa-solid fa-gamepad"></i>
+              Palavra
               Embaralhada</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <div class="content">
-              <p class="word"></p>
+              <div class="word"></div>
               <div class="details">
-                <p class="hint">Dica: <span></span></p>
+                <div class="hint"> <span></span></div>
               </div>
-              <input type="text" spellcheck="false" placeholder="Escreva a palavra">
+
+              <input type="text" spellcheck="false" placeholder="Escreva a palavra" id="palavras-respostas">
+
               <div class="buttons">
                 <button class="btn-game" id="refresh-word">Embaralhar</button>
                 <button class="btn-game" id="check-word">Confirmar</button>
@@ -112,17 +124,11 @@
               </div>
             </div>
           </div>
-          <!-- <div class="modal-footer d-flex  justify-content-center">
-        <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Voltar</button>
-      </div> -->
         </div>
       </div>
     </div>
-
-    <button class="btn d-flex align-items-center justify-content-evenly" data-bs-target="#exampleModalToggle"
-      id="btn-game" data-bs-toggle="modal"><i class="fa-solid fa-puzzle-piece" id="puzzle"></i>Teste Seus
-      Conhecimentos</i></button>
-  </div>
+  </div> <br><br>
+  <!-- ######################################## GAME DE EMBARALHAR PALAVRAS END ##################################### -->
 </body>
 
 </html>
